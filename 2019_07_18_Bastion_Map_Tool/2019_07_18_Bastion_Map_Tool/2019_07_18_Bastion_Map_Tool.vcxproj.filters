@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="오브젝트">
+      <UniqueIdentifier>{dbed24de-3d40-4b96-9d6e-e0a8f8c0e091}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScreenDib.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSpriteDib.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="CList.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectImage.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSprite.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectSpriteCompose.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMousePointer.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectStageMap.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenu.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuTitleBar.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuTile.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuPlayer.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuElementList.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuElementListScrollBar.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuTileElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectUI.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuPlayerElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectUnit.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuObject.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuObjectElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuBroken.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuBrokenElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuEnemy.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuStage.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuStageElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMenuEnemyElement.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScreenDib.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpriteDib.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectImage.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectSprite.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectSpriteCompose.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMousePointer.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectStageMap.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenu.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuTitleBar.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuTile.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuPlayer.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuElementList.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuElementListScrollBar.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuTileElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectUI.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuPlayerElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectUnit.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuObject.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuObjectElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuBroken.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuBrokenElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuEnemy.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuStage.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuStageElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMenuEnemyElement.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="2019_07_18_Bastion_Map_Tool.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="2019_07_18_Bastion_Map_Tool.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
