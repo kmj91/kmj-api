@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="오브젝트">
+      <UniqueIdentifier>{cd1bfbf1-37a3-441d-8779-5a817036c2e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="오브젝트\UI">
+      <UniqueIdentifier>{6b26c12c-2ba3-4ed3-8567-aeb0cd1eafd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="오브젝트\유닛">
+      <UniqueIdentifier>{42e238d3-75d6-4278-bddb-6104e53b01ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="오브젝트\UI\메뉴">
+      <UniqueIdentifier>{a5f16745-b33e-4b9a-8e22-63d28680697c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="오브젝트\UI\리스트">
+      <UniqueIdentifier>{65e74300-6130-41f4-8816-1319dc44a1bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScreenDib.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSpriteDib.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CList.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectStageMap.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectUI.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UITitleBar.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UITab.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElement.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UIScrollBar.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMousePointer.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectLight.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectLightDib.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectUnit.h">
+      <Filter>오브젝트\유닛</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitLantern.h">
+      <Filter>오브젝트\유닛</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitLocation.h">
+      <Filter>오브젝트\유닛</Filter>
+    </ClInclude>
+    <ClInclude Include="UIButton.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTileUnit.h">
+      <Filter>오브젝트\UI\메뉴</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuTrigger.h">
+      <Filter>오브젝트\UI\메뉴</Filter>
+    </ClInclude>
+    <ClInclude Include="UIMenu.h">
+      <Filter>오브젝트\UI\메뉴</Filter>
+    </ClInclude>
+    <ClInclude Include="ListTileUnit.h">
+      <Filter>오브젝트\UI\리스트</Filter>
+    </ClInclude>
+    <ClInclude Include="UIList.h">
+      <Filter>오브젝트\UI\리스트</Filter>
+    </ClInclude>
+    <ClInclude Include="ListTrigger.h">
+      <Filter>오브젝트\UI\리스트</Filter>
+    </ClInclude>
+    <ClInclude Include="UITriggerElement.h">
+      <Filter>오브젝트\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitEnemy.h">
+      <Filter>오브젝트\유닛</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScreenDib.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpriteDib.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectStageMap.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectUI.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UITitleBar.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UITab.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIElement.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIScrollBar.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMousePointer.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectLight.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectLightDib.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectUnit.cpp">
+      <Filter>오브젝트\유닛</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitLantern.cpp">
+      <Filter>오브젝트\유닛</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitLocation.cpp">
+      <Filter>오브젝트\유닛</Filter>
+    </ClCompile>
+    <ClCompile Include="UIButton.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTileUnit.cpp">
+      <Filter>오브젝트\UI\메뉴</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuTrigger.cpp">
+      <Filter>오브젝트\UI\메뉴</Filter>
+    </ClCompile>
+    <ClCompile Include="UIMenu.cpp">
+      <Filter>오브젝트\UI\메뉴</Filter>
+    </ClCompile>
+    <ClCompile Include="ListTileUnit.cpp">
+      <Filter>오브젝트\UI\리스트</Filter>
+    </ClCompile>
+    <ClCompile Include="UIList.cpp">
+      <Filter>오브젝트\UI\리스트</Filter>
+    </ClCompile>
+    <ClCompile Include="ListTrigger.cpp">
+      <Filter>오브젝트\UI\리스트</Filter>
+    </ClCompile>
+    <ClCompile Include="UITriggerElement.cpp">
+      <Filter>오브젝트\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitEnemy.cpp">
+      <Filter>오브젝트\유닛</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="2019_08_26_Enter_the_Gungeon_Map_Tool.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="2019_08_26_Enter_the_Gungeon_Map_Tool.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
