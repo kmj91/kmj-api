@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="오브젝트">
+      <UniqueIdentifier>{15d3772e-6e6b-43be-ac92-430e12e9e9b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="이벤트">
+      <UniqueIdentifier>{226b960b-7095-4220-9f4f-fcaf21707927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="씬">
+      <UniqueIdentifier>{33b6b6c0-7ead-46a2-a964-625bf44ce7c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CQueue.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CScreenDib.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CSpriteDib.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMainGame.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>이벤트</Filter>
+    </ClInclude>
+    <ClInclude Include="EventMainGame.h">
+      <Filter>이벤트</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectAlucard.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPlayer.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBackground.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBullet.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectGuidedBullet.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEnemyRed.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEnemyBlue.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryPool.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CMemoryPoolTLS.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectItemPowerUp.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEffect.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitleAndSelect.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="EventTitle.h">
+      <Filter>이벤트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectPicture.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="EventSelect.h">
+      <Filter>이벤트</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectAnimation.h">
+      <Filter>오브젝트</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CQueue.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CScreenDib.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpriteDib.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMainGame.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>이벤트</Filter>
+    </ClCompile>
+    <ClCompile Include="EventMainGame.cpp">
+      <Filter>이벤트</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectAlucard.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPlayer.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBackground.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBullet.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectGuidedBullet.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEnemyRed.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEnemyBlue.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectItemPowerUp.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEffect.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitleAndSelect.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="EventTitle.cpp">
+      <Filter>이벤트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectPicture.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectAnimation.cpp">
+      <Filter>오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="EventSelect.cpp">
+      <Filter>이벤트</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="2019_06_30_Gunbird.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="2019_06_30_Gunbird.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
