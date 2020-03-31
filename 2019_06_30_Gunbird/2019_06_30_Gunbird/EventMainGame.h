@@ -8,7 +8,6 @@ using namespace std;
 class Object;
 class ObjectPlayer;
 class SceneMainGame;
-class CQueue;
 
 class EventMainGame : public Event
 {

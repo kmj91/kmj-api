@@ -1,7 +1,6 @@
 ﻿#include "stdafx.h"
 #include "EventMainGame.h"
 #include "SceneMainGame.h"
-#include "CQueue.h"
 #include "Object.h"
 #include "ObjectPlayer.h"
 #include "ObjectAlucard.h"

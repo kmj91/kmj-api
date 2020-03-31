@@ -38,7 +38,7 @@ list<Object *> * g_ObjectList;		// 오브젝트 리스트
 Object * g_StageBackground;			// 현제 배경 오브젝트
 ObjectPlayer *g_Player = NULL;
 
-CMemoryPoolTLS<ObjectBullet> g_ObjectBulletPool(90, 100, false);		// 오브젝트 풀
+CObjectPoolTLS<ObjectBullet> g_ObjectBulletPool(90, 100, false);		// 오브젝트 풀
 
 GameState g_GameState = EMPT;		// 현제 게임 진행 상태
 int g_iCoin = 0;					// 코인

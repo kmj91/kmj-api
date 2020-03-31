@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\PC\Documents\GitHub\kmj-api\Library;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -138,6 +139,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\PC\Documents\GitHub\kmj-api\Library;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,9 +149,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CMemoryPool.h" />
-    <ClInclude Include="CMemoryPoolTLS.h" />
-    <ClInclude Include="CQueue.h" />
     <ClInclude Include="CScreenDib.h" />
     <ClInclude Include="CSpriteDib.h" />
     <ClInclude Include="Event.h" />
@@ -177,7 +176,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CQueue.cpp" />
     <ClCompile Include="CScreenDib.cpp" />
     <ClCompile Include="CSpriteDib.cpp" />
     <ClCompile Include="Event.cpp" />

@@ -1,7 +1,7 @@
 ﻿#pragma once
 // 2018.09.07			기명준
 
-#include "CMemoryPool.h"
+#include "CObjectPool.h"
 
 #include <Windows.h>
 //#include <assert.h>
@@ -10,10 +10,10 @@
 //#include <intrin.h>		//_InterlockedCompareExchange
 
 template <class DATA>
-class CMemoryPoolTLS
+class CObjectPoolTLS
 {
 private:
-	// CMemoryPool -> Check 덩어리 -> CMemoryPoolTLS
+	// CObjectPool -> Check 덩어리 -> CObjectPoolTLS
 	
 	template <class DATA>
 	class Chunk;
@@ -34,18 +34,18 @@ private:
 	template <class DATA>
 	class Chunk {
 	public:
-		// CMemoryPool에서 처음 이후 호출하는 생성자
+		// CObjectPool에서 처음 이후 호출하는 생성자
 		Chunk() {
 
 		}
 
-		// CMemoryPool에서 처음 호출하는 생성자
+		// CObjectPool에서 처음 호출하는 생성자
 		Chunk(int iBlockCount, bool bPlacementNew, void * pYobidashi) {
 			m_lAllocCount = iBlockCount;
 			//m_lUseCount = iBlockCount;
 			m_lFreeCount = iBlockCount;
 			m_pYobidashi = pYobidashi;
-			//m_bPlacementOption = CMemoryPoolTLS<DATA>::m_bPLACEMENT;
+			//m_bPlacementOption = CObjectPoolTLS<DATA>::m_bPLACEMENT;
 			m_bPlacementOption = bPlacementNew;
 			CreateDataList();
 		}
@@ -188,8 +188,8 @@ public:
 	//				(bool) 생성자 호출 여부.
 	// Return:
 	//////////////////////////////////////////////////////////////////////////
-	CMemoryPoolTLS(int iChunkNum = 0, int iBlockNum = 100, bool bPlacementNew = false);
-	virtual	~CMemoryPoolTLS();
+	CObjectPoolTLS(int iChunkNum = 0, int iBlockNum = 100, bool bPlacementNew = false);
+	virtual	~CObjectPoolTLS();
 
 public:
 	//////////////////////////////////////////////////////////////////////////
@@ -215,7 +215,7 @@ public:
 	// Parameters: 없음.
 	// Return: (int) 메모리 풀 내부 전체 개수
 	//////////////////////////////////////////////////////////////////////////
-	int		GetAllocCount(void) { return m_MemoryPool->GetAllocCount() * iChunkBlockCount; }
+	int		GetAllocCount(void) { return m_ObjectPool->GetAllocCount() * iChunkBlockCount; }
 
 	//////////////////////////////////////////////////////////////////////////
 	// 현재 사용중인 블럭 개수를 얻는다.
@@ -223,10 +223,10 @@ public:
 	// Parameters: 없음.
 	// Return: (int) 사용중인 블럭 개수.
 	//////////////////////////////////////////////////////////////////////////
-	int		GetUseCount(void) { return m_MemoryPool->GetUseCount() * iChunkBlockCount; }
+	int		GetUseCount(void) { return m_ObjectPool->GetUseCount() * iChunkBlockCount; }
 
 private:
-	CMemoryPool<Chunk<DATA>> * m_MemoryPool;
+	CObjectPool<Chunk<DATA>> * m_ObjectPool;
 	int iChunkBlockCount;
 	unsigned long m_TLSindex;
 	bool m_bPlacementOption;
@@ -249,7 +249,7 @@ private:
 
 //생성자
 template <class DATA>
-CMemoryPoolTLS<DATA>::CMemoryPoolTLS(int iChunkNum, int iBlockNum, bool bPlacementNew) {
+CObjectPoolTLS<DATA>::CObjectPoolTLS(int iChunkNum, int iBlockNum, bool bPlacementNew) {
 	if (iChunkNum < 0) {
 		iChunkNum = 0;
 	}
@@ -271,17 +271,17 @@ CMemoryPoolTLS<DATA>::CMemoryPoolTLS(int iChunkNum, int iBlockNum, bool bPlaceme
 	// TLS 인덱스 할당
 	m_TLSindex = TlsAlloc();
 
-	m_MemoryPool = new CMemoryPool<Chunk<DATA>>(iChunkNum, iBlockNum, this, bPlacementNew);
+	m_ObjectPool = new CObjectPool<Chunk<DATA>>(iChunkNum, iBlockNum, this, bPlacementNew);
 }
 
 //파괴자
 template <class DATA>
-CMemoryPoolTLS<DATA>::~CMemoryPoolTLS() {
+CObjectPoolTLS<DATA>::~CObjectPoolTLS() {
 	int iSize;
 	int iCnt;
 	void * temp;
 
-	delete m_MemoryPool;
+	delete m_ObjectPool;
 	TlsFree(m_TLSindex);
 
 	//free(m_chObjectMemory);
@@ -297,7 +297,7 @@ CMemoryPoolTLS<DATA>::~CMemoryPoolTLS() {
 
 //사용
 template <class DATA>
-DATA * CMemoryPoolTLS<DATA>::Alloc(void) {
+DATA * CObjectPoolTLS<DATA>::Alloc(void) {
 	Chunk<DATA> *pChunk;
 	DATA *pData;
 
@@ -306,13 +306,13 @@ DATA * CMemoryPoolTLS<DATA>::Alloc(void) {
 	// Chunk가 없으면 새로 할당받는다
 	if (pChunk == 0) {
 		//REALLOC :
-		pChunk = m_MemoryPool->AllocTLS();
+		pChunk = m_ObjectPool->AllocTLS();
 		TlsSetValue(m_TLSindex, (LPVOID)pChunk);
 	}
 
 	// 마지막 블록일 경우 새로 Chunk를 할당 받는다
 	if (pChunk->Alloc(&pData)) {
-		pChunk = m_MemoryPool->AllocTLS();
+		pChunk = m_ObjectPool->AllocTLS();
 		TlsSetValue(m_TLSindex, (LPVOID)pChunk);
 	}
 
@@ -328,7 +328,7 @@ DATA * CMemoryPoolTLS<DATA>::Alloc(void) {
 
 //해제
 template <class DATA>
-bool CMemoryPoolTLS<DATA>::Free(DATA *pData) {
+bool CObjectPoolTLS<DATA>::Free(DATA *pData) {
 	st_CHUNK_NODE * pNewTop = (st_CHUNK_NODE *)pData - 1;
 
 	if (pNewTop->chHashCode != CHUNK_HASH_CODE) {
@@ -341,7 +341,7 @@ bool CMemoryPoolTLS<DATA>::Free(DATA *pData) {
 
 	if (InterlockedDecrement(&pNewTop->pChunk->m_lFreeCount) == 0) {
 		pNewTop->pChunk->InitChunk();
-		m_MemoryPool->Free(pNewTop->pChunk);
+		m_ObjectPool->Free(pNewTop->pChunk);
 	}
 
 	return true;

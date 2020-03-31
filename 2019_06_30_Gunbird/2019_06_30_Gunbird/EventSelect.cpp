@@ -1,7 +1,6 @@
 ﻿#include "stdafx.h"
 #include "EventSelect.h"
 #include "SceneTitleAndSelect.h"
-#include "CQueue.h"
 #include "Object.h"
 #include "ObjectPicture.h"
 #include "ObjectAnimation.h"

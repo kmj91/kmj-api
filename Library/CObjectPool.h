@@ -8,7 +8,7 @@ procademy MemoryPool.
 
 - 사용법.
 
-procademy::CMemoryPool<DATA> MemPool(300, FALSE);
+procademy::CObjectPool<DATA> MemPool(300, FALSE);
 DATA *pData = MemPool.Alloc();
 
 pData 사용
@@ -25,11 +25,11 @@ MemPool.Free(pData);
 #include <intrin.h>		//_InterlockedCompareExchange
 
 template <class DATA>
-class CMemoryPool
+class CObjectPool
 {
 private:
 	template <class DATA>
-	friend class CMemoryPoolTLS;
+	friend class CObjectPoolTLS;
 
 	enum en_CMemoryPool {
 		HASH_CODE = 77,
@@ -64,12 +64,12 @@ public:
 	//				(bool) 생성자 호출 여부.
 	// Return:
 	//////////////////////////////////////////////////////////////////////////
-	CMemoryPool(int iBlockNum, bool bPlacementNew = false);
-	virtual	~CMemoryPool();
+	CObjectPool(int iBlockNum, bool bPlacementNew = false);
+	virtual	~CObjectPool();
 
 private:
 	// TLS에서 호출 생성자
-	CMemoryPool(int iChunkNum, int iBlockNum, void * pYobidashi , bool bPlacementNew = false);
+	CObjectPool(int iChunkNum, int iBlockNum, void * pYobidashi , bool bPlacementNew = false);
 
 public:
 	//////////////////////////////////////////////////////////////////////////
@@ -137,7 +137,7 @@ private:
 
 //생성자
 template <class DATA>
-CMemoryPool<DATA>::CMemoryPool(int iBlockNum, bool bPlacementNew) {
+CObjectPool<DATA>::CObjectPool(int iBlockNum, bool bPlacementNew) {
 	if (iBlockNum < 0) {
 		iBlockNum = 0;
 	}
@@ -168,7 +168,7 @@ CMemoryPool<DATA>::CMemoryPool(int iBlockNum, bool bPlacementNew) {
 
 //파괴자
 template <class DATA>
-CMemoryPool<DATA>::~CMemoryPool() {
+CObjectPool<DATA>::~CObjectPool() {
 	int iSize;
 	int iCnt;
 	void * temp;
@@ -187,7 +187,7 @@ CMemoryPool<DATA>::~CMemoryPool() {
 // 생성자
 // TLS에서 호출 생성자
 template <class DATA>
-CMemoryPool<DATA>::CMemoryPool(int iChunkNum, int iBlockNum, void * pYobidashi, bool bPlacementNew) {
+CObjectPool<DATA>::CObjectPool(int iChunkNum, int iBlockNum, void * pYobidashi, bool bPlacementNew) {
 	if (iChunkNum < 0) {
 		iChunkNum = 0;
 	}
@@ -223,7 +223,7 @@ CMemoryPool<DATA>::CMemoryPool(int iChunkNum, int iBlockNum, void * pYobidashi, 
 
 //사용
 template <class DATA>
-DATA * CMemoryPool<DATA>::Alloc(void) {
+DATA * CObjectPool<DATA>::Alloc(void) {
 	long lLocalAllocCount;
 	long lLocalUseCount;
 	long lLocalSupplementBlockCount;
@@ -329,7 +329,7 @@ DATA * CMemoryPool<DATA>::Alloc(void) {
 
 //해제
 template <class DATA>
-bool CMemoryPool<DATA>::Free(DATA *pData) {
+bool CObjectPool<DATA>::Free(DATA *pData) {
 	st_BLOCK_NODE * pNewTop = (st_BLOCK_NODE *)pData - 1;
 	st_BLOCK_NODE * pLocalTop;
 	LARGE_INTEGER_128 pCompareTop;
@@ -384,7 +384,7 @@ bool CMemoryPool<DATA>::Free(DATA *pData) {
 
 //초기화
 template <class DATA>
-void CMemoryPool<DATA>::InitBlock() {
+void CObjectPool<DATA>::InitBlock() {
 	int cnt;
 	int iDataSize;
 	int iNodeSize;
@@ -430,7 +430,7 @@ void CMemoryPool<DATA>::InitBlock() {
 
 //추가 할당
 template <class DATA>
-DATA * CMemoryPool<DATA>::SupplementBlock() {
+DATA * CObjectPool<DATA>::SupplementBlock() {
 	int iDataSize;
 	int iNodeSize;
 	//st_BLOCK_NODE stNode;
@@ -461,7 +461,7 @@ DATA * CMemoryPool<DATA>::SupplementBlock() {
 
 // TLS 초기화
 template <class DATA>
-void CMemoryPool<DATA>::InitBlockTLS() {
+void CObjectPool<DATA>::InitBlockTLS() {
 	int cnt;
 	int iDataSize;
 	int iNodeSize;
@@ -508,7 +508,7 @@ void CMemoryPool<DATA>::InitBlockTLS() {
 
 //사용
 template <class DATA>
-DATA * CMemoryPool<DATA>::AllocTLS(void) {
+DATA * CObjectPool<DATA>::AllocTLS(void) {
 	long lLocalAllocCount;
 	long lLocalUseCount;
 	long lLocalSupplementBlockCount;
@@ -614,7 +614,7 @@ DATA * CMemoryPool<DATA>::AllocTLS(void) {
 
 //추가 할당
 template <class DATA>
-DATA * CMemoryPool<DATA>::SupplementBlockTLS() {
+DATA * CObjectPool<DATA>::SupplementBlockTLS() {
 	int iDataSize;
 	int iNodeSize;
 	//st_BLOCK_NODE stNode;

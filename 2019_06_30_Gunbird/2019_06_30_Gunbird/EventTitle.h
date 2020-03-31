@@ -7,7 +7,6 @@ using namespace std;
 
 class Object;
 class SceneTitleAndSelect;
-class CQueue;
 class ObjectPicture;
 
 class EventTitle :public Event

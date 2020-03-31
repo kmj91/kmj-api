@@ -24,8 +24,9 @@
 #include "SceneManager.h"
 #include "Object.h"
 #include "ObjectPlayer.h"
-#include "CMemoryPoolTLS.h"
+#include "CObjectPoolTLS.h"
 #include "ObjectBullet.h"
+#include "CQueue.h"
 
 #include <list>
 
@@ -394,7 +395,7 @@ extern list<Object *> * g_ObjectList;		// 오브젝트 리스트
 extern Object * g_StageBackground;			// 현제 배경 오브젝트
 
 extern ObjectPlayer *g_Player;
-extern CMemoryPoolTLS<ObjectBullet> g_ObjectBulletPool;		// 오브젝트 풀
+extern CObjectPoolTLS<ObjectBullet> g_ObjectBulletPool;		// 오브젝트 풀
 
 
 extern GameState g_GameState;			// 현제 게임 진행 상태
