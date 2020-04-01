@@ -46,11 +46,6 @@ private:
 	/* **************************************************************** */
 	struct st_BLOCK_NODE
 	{
-		st_BLOCK_NODE()
-		{
-			chHashCode = SUPPLEMENT_HASH_CODE;
-			stpNextBlock = NULL;
-		}
 		char chHashCode;
 		st_BLOCK_NODE *stpNextBlock;
 	};
@@ -151,13 +146,7 @@ CObjectPool<DATA>::CObjectPool(int iBlockNum, bool bPlacementNew) {
 	m_stSupplementBlockTop.Int[0] = NULL;
 	m_stSupplementBlockTop.Int[1] = NULL;
 
-	//if (bPlacementNew) {
-	//	m_bPlacementOption = true;
-	//}
-	//else {
-	//	m_bPlacementOption = false;
-	//}
-
+	// 생성자 호출 옵션
 	m_bPlacementOption = bPlacementNew;
 
 	if (iBlockNum) {
@@ -208,12 +197,8 @@ CObjectPool<DATA>::CObjectPool(int iChunkNum, int iBlockNum, void * pYobidashi, 
 	m_stSupplementBlockTop.Int[0] = NULL;
 	m_stSupplementBlockTop.Int[1] = NULL;
 
-	if (bPlacementNew) {
-		m_bPlacementOption = true;
-	}
-	else {
-		m_bPlacementOption = false;
-	}
+	// 생성자 호출 옵션
+	m_bPlacementOption = bPlacementNew;
 
 	if (iChunkNum) {
 		//초기화
@@ -396,8 +381,10 @@ void CObjectPool<DATA>::InitBlock() {
 
 	m_stTop.Int[0] = (__int64)m_chObjectMemory;
 
+	// 생성자 호출 옵션
 	if (m_bPlacementOption) {
-		for (cnt = 0; cnt < m_lAllocCount - 1; cnt++) {
+		// 여기서 생성자를 호출하지 않습니다. Alloc을 할 때 마다 생성자 호출
+		for (cnt = 0; cnt < m_lAllocCount - 1; ++cnt) {
 			stNode.chHashCode = HASH_CODE;
 			stNode.stpNextBlock = (st_BLOCK_NODE *)(m_chObjectMemory + iDataSize + iNodeSize);
 			*(st_BLOCK_NODE *)m_chObjectMemory = stNode;
@@ -408,7 +395,8 @@ void CObjectPool<DATA>::InitBlock() {
 		*(st_BLOCK_NODE *)m_chObjectMemory = stNode;
 	}
 	else {
-		for (cnt = 0; cnt < m_lAllocCount - 1; cnt++) {
+		// 생성자 호출을 이곳에서 한번만 해줍니다.
+		for (cnt = 0; cnt < m_lAllocCount - 1; ++cnt) {
 			stNode.chHashCode = HASH_CODE;
 			stNode.stpNextBlock = (st_BLOCK_NODE *)(m_chObjectMemory + iDataSize + iNodeSize);
 			*(st_BLOCK_NODE *)m_chObjectMemory = stNode;
@@ -473,8 +461,10 @@ void CObjectPool<DATA>::InitBlockTLS() {
 
 	m_stTop.Int[0] = (__int64)m_chObjectMemory;
 
+	// 생성자 호출 옵션
 	if (m_bPlacementOption) {
-		for (cnt = 0; cnt < m_lAllocCount - 1; cnt++) {
+		// 여기서 생성자를 호출하지 않습니다. Alloc을 할 때 마다 생성자 호출
+		for (cnt = 0; cnt < m_lAllocCount - 1; ++cnt) {
 			stNode.chHashCode = HASH_CODE;
 			stNode.stpNextBlock = (st_BLOCK_NODE *)(m_chObjectMemory + iDataSize + iNodeSize);
 			*(st_BLOCK_NODE *)m_chObjectMemory = stNode;
@@ -485,7 +475,8 @@ void CObjectPool<DATA>::InitBlockTLS() {
 		*(st_BLOCK_NODE *)m_chObjectMemory = stNode;
 	}
 	else {
-		for (cnt = 0; cnt < m_lAllocCount - 1; cnt++) {
+		// 생성자 호출을 이곳에서 한번만 해줍니다.
+		for (cnt = 0; cnt < m_lAllocCount - 1; ++cnt) {
 			stNode.chHashCode = HASH_CODE;
 			stNode.stpNextBlock = (st_BLOCK_NODE *)(m_chObjectMemory + iDataSize + iNodeSize);
 			*(st_BLOCK_NODE *)m_chObjectMemory = stNode;
