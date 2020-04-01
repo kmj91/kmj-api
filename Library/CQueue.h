@@ -4,9 +4,12 @@
 
 #include <string.h>
 
-#define DEFAULT_SIZE 100
-
 class CQueue{
+public :
+	enum en_CQueue {
+		DEFAULT_SIZE = 100
+	};
+
 public :
 	CQueue() {
 		_queue = new int[DEFAULT_SIZE];
@@ -36,7 +39,7 @@ public :
 
 	bool Enqueue(int Data) {
 		//배열이 다 찼는가?
-		if ((_rear + 1) % 10 == _front) {
+		if ((_rear + 1) % _queueSize == _front) {
 			return false;
 		}
 		_queue[_rear] = Data;
@@ -83,7 +86,7 @@ public :
 
 	// 데이터가 있는지 없는지 true / false
 	bool isEmpty() {
-		if ((_rear + 1) % 10 == _front) {
+		if ((_rear + 1) % _queueSize == _front) {
 			return false;
 		}
 		else {
