@@ -23,7 +23,7 @@
     <ProjectGuid>{7A4232E7-D1C2-4320-A726-F71B6E12BFA5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>My20190826EntertheGungeonMapTool</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -100,11 +100,11 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\asuspc\source\repos\2019_08_26_Enter_the_Gungeon_Map_Tool\2019_08_26_Enter_the_Gungeon_Map_Tool\include;C:\Users\PC\Documents\Visual Studio Project\2019_08_26_Enter_the_Gungeon_Map_Tool\2019_08_26_Enter_the_Gungeon_Map_Tool\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\PC\Documents\GitHub\kmj-api\Library;C:\Users\PC\Documents\GitHub\kmj-api\2019_08_26_Enter_the_Gungeon_Map_Tool\2019_08_26_Enter_the_Gungeon_Map_Tool\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -1333,6 +1333,9 @@ void InsertionSort()
 					iterSort._node->_Next->_data = sortObject;
 					iterSort._node->_data = compareObject;
 				}
+				else {
+					break;
+				}
 
 				--iterSort;
 				--iSortNum;
